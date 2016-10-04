@@ -111,6 +111,7 @@
     <Compile Include="BackgroundUpdater.cs" />
     <Compile Include="ForecastData.cs" />
     <Compile Include="LiveTile.cs" />
+    <Compile Include="LiveTileScreenshot.cs" />
     <Compile Include="Notification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
