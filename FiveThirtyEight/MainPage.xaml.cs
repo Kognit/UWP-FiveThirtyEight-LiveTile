@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel.Background;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -33,10 +34,20 @@ namespace FiveThirtyEight
         {
             this.RegisterBackgroundTask();
 
+            SetUp();
 
+        }
+
+        async void SetUp()
+        {
             //SET LIVETILE ON STARTUP
             BackgroundUpdater.RunFromMainPage();
 
+            await Task.Delay(2000);
+
+            loadRing.Visibility = Visibility.Collapsed;
+            loadText.Visibility = Visibility.Collapsed;
+            settingsStack.Visibility = Visibility.Visible;
         }
 
 

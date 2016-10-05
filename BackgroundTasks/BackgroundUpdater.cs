@@ -14,6 +14,7 @@ namespace BackgroundTasks
 {
     public sealed class BackgroundUpdater : IBackgroundTask
     {
+
         public async void Run(IBackgroundTaskInstance taskInstance)
         {
             // Get a deferral, to prevent the task from closing prematurely
@@ -40,6 +41,7 @@ namespace BackgroundTasks
 
             LiveTile tile = new LiveTile();
             await tile.PinTile(data);
+            
         }
     }
 }

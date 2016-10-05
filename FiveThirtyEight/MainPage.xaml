@@ -9,5 +9,32 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+
+        <ProgressRing x:Name="loadRing" Width="60" Height="60" IsActive="True"></ProgressRing>
+        <TextBlock x:Name="loadText" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,125,0,0">Setting up LiveTile...</TextBlock>
+        
+        <StackPanel x:Name="settingsStack" VerticalAlignment="Center" MaxWidth="450" Visibility="Collapsed">
+
+            <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="25">All set up!</TextBlock>
+            <TextBlock HorizontalAlignment="Center" FontSize="12.5">The LiveTile has been set up and the background task registered.</TextBlock>
+
+            <TextBlock Margin="0,30,0,0" HorizontalAlignment="Center" FontWeight="Bold">Settings</TextBlock>
+            
+            <MenuFlyoutSeparator></MenuFlyoutSeparator>
+
+            <ToggleSwitch OffContent="Send Notification when Numbers change" OnContent="Send Notification when Numbers change"></ToggleSwitch>
+            <ToggleSwitch OffContent="Enable Photo-Backgrounds on Medium sized Tile" OnContent="Enable Photo-Backgrounds on Medium sized Tile"></ToggleSwitch>
+            
+            <MenuFlyoutSeparator></MenuFlyoutSeparator>
+
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="12.5">Your settings will be applied automatically.</TextBlock>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="12.5">Thank you for using my little project.</TextBlock>
+
+            <TextBlock Margin="0,20,0,0" HorizontalAlignment="Center" Foreground="Gray" TextWrapping="Wrap" FontSize="11" IsTextSelectionEnabled="True">github.com/Kognit/UWP-FiveThirtyEight-LiveTile</TextBlock>
+
+
+
+        </StackPanel>
+
     </Grid>
 </Page>
