@@ -113,6 +113,9 @@
     <Content Include="Assets\BadgeLogo.scale-200.png" />
     <Content Include="Assets\BadgeLogo.scale-400.png" />
     <Content Include="Assets\clinton-head-line-alpha.png" />
+    <Content Include="Assets\medium-clinton.jpg" />
+    <Content Include="Assets\medium-trump.jpg" />
+    <Content Include="Assets\Square310x310Logo.scale-100.png" />
     <Content Include="Assets\trump-head-line-alpha.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

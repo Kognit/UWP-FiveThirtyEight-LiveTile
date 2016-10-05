@@ -25,8 +25,13 @@ namespace BackgroundTasks
 
         internal double confidenceDemocrat;
         internal double confidenceRepublican;
-
         internal double confidenceDifference = 0;
+
+        internal double electoralVotesDemocrat;
+        internal double electoralVotesRepublican;
+
+        internal double popularVoteDemocrat;
+        internal double popularVoteRepublican;
 
         public ForecastData()
         {
@@ -87,6 +92,24 @@ namespace BackgroundTasks
 
             Debug.WriteLine(confidenceDemocrat + " HILLARY");
             Debug.WriteLine(confidenceRepublican + " TRUMP");
+
+            //GET PREDICTED ELECTORAL VOTES
+            inputs = from input in html.DocumentNode.Descendants("p")
+                         where input.Attributes.Count > 0 && input.Attributes["class"].Value == "candidate-val text-value small"
+                         select input;
+
+            electoralVotesDemocrat = double.Parse(inputs.ToList()[0].InnerText);
+            electoralVotesRepublican = double.Parse(inputs.ToList()[1].InnerText);
+
+            Debug.WriteLine(electoralVotesDemocrat + " ELECTORAL VOTES HILLARY");
+            Debug.WriteLine(electoralVotesRepublican + " ELECTORAL VOTES TRUMP");
+
+            //GET PREDICTED POPULAR VOTE
+            popularVoteDemocrat = double.Parse(inputs.ToList()[3].InnerText.TrimEnd('%'));
+            popularVoteRepublican = double.Parse(inputs.ToList()[4].InnerText.TrimEnd('%'));
+
+            Debug.WriteLine(popularVoteDemocrat + " POPULAR VOTE HILLARY");
+            Debug.WriteLine(popularVoteRepublican + " POPULAR VOTE TRUMP");
 
             //GET LAST FORECAST IF AVAILABLE
             Point lastValues =  new Point(confidenceDemocrat, confidenceRepublican);
