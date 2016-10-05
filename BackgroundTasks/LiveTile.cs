@@ -189,12 +189,12 @@ namespace BackgroundTasks
             switch (mode)
             {
                 case 0:
-                    text1 = (int)data.confidenceDemocrat + "%" + diffDemocrat;
+                    text1 = (int)data.confidenceDemocrat + "%";
                     text2 = democrat;
                     back = "Assets/medium-clinton.jpg";
                     break;
                 case 1:
-                    text1 = (int)data.confidenceRepublican + "%" + diffRepublican;
+                    text1 = (int)data.confidenceRepublican + "%";
                     text2 = republican;
                     back = "Assets/medium-trump.jpg";
                     break;
@@ -344,23 +344,21 @@ namespace BackgroundTasks
                                 },
                                 new AdaptiveText()
                                 {
-                                    Text = data.confidenceDemocrat + "%" + diffDemocrat,
+                                    Text = data.confidenceDemocrat + "%",
                                     HintAlign = AdaptiveTextAlign.Center,
                                     HintStyle = AdaptiveTextStyle.TitleNumeral,
                                 },
-
+                                new AdaptiveText()
+                                {
+                                    Text = diffDemocrat.Substring(1),
+                                    HintAlign = AdaptiveTextAlign.Center,
+                                    HintStyle = AdaptiveTextStyle.Caption
+                                },
                                 new AdaptiveText()
                                 {
                                     Text = democrat,
                                     HintAlign = AdaptiveTextAlign.Center,
                                     HintStyle = AdaptiveTextStyle.Caption
-                                },
-
-                                new AdaptiveText()
-                                {
-                                    Text = "",
-                                    HintAlign = AdaptiveTextAlign.Center,
-                                    HintStyle = AdaptiveTextStyle.CaptionSubtle
                                 },
                                 new AdaptiveText()
                                 {
@@ -405,23 +403,21 @@ namespace BackgroundTasks
                                 },
                                 new AdaptiveText()
                                 {
-                                    Text = data.confidenceRepublican + "%" + diffRepublican,
+                                    Text = data.confidenceRepublican + "%",
                                     HintAlign = AdaptiveTextAlign.Center,
                                     HintStyle = AdaptiveTextStyle.TitleNumeral
                                 },
-
+                                new AdaptiveText()
+                                {
+                                    Text = diffRepublican.Substring(1),
+                                    HintAlign = AdaptiveTextAlign.Center,
+                                    HintStyle = AdaptiveTextStyle.Caption
+                                },
                                 new AdaptiveText()
                                 {
                                     Text = republican,
                                     HintAlign = AdaptiveTextAlign.Center,
                                     HintStyle = AdaptiveTextStyle.Caption
-                                },
-
-                                new AdaptiveText()
-                                {
-                                    Text = "",
-                                    HintAlign = AdaptiveTextAlign.Center,
-                                    HintStyle = AdaptiveTextStyle.CaptionSubtle
                                 },
                                 new AdaptiveText()
                                 {

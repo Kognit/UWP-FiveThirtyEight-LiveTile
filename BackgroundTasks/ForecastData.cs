@@ -120,7 +120,7 @@ namespace BackgroundTasks
             if (appSettings.Values.ContainsKey("lastdifference"))
             {
                 confidenceDifference = (double)appSettings.Values["lastdifference"];
-            }
+            }        
 
             //COMPARE TO LAST FORECAST
             if (confidenceDemocrat - lastValues.X > 0.01 || confidenceDemocrat - lastValues.X < -0.01)
