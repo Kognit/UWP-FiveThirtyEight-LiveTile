@@ -7,7 +7,7 @@ Starting this app once will register a Background-Process polling fivethirtyeigh
 
 # Live-Tile
 
-All Live-Tile sizes (small, medium, wide, large) are supported and will show the overall confidence scores of the candidates.
+All Live-Tile sizes (small, medium, wide, large) are supported and will show the overall confidence scores for the candidates.
 
 When the numbers change, a trend will also be displayed.
 
