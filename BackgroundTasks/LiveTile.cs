@@ -319,6 +319,19 @@ namespace BackgroundTasks
 
         private TileBinding GenerateTileBindingLarge()
         {
+            string dem1 = democrat;
+            string dem2 = "";
+            string rep1 = republican;
+            string rep2 = "";
+
+            if(diffDemocrat != "")
+            {
+                dem1 = diffDemocrat.Substring(1);
+                dem2 = democrat;
+                rep1 = diffRepublican.Substring(1);
+                rep2 = republican;
+            }
+
             return new TileBinding()
             {
                 Content = new TileBindingContentAdaptive()
@@ -350,13 +363,13 @@ namespace BackgroundTasks
                                 },
                                 new AdaptiveText()
                                 {
-                                    Text = diffDemocrat.Substring(1),
+                                    Text = dem1,
                                     HintAlign = AdaptiveTextAlign.Center,
                                     HintStyle = AdaptiveTextStyle.Caption
                                 },
                                 new AdaptiveText()
                                 {
-                                    Text = democrat,
+                                    Text = dem2,
                                     HintAlign = AdaptiveTextAlign.Center,
                                     HintStyle = AdaptiveTextStyle.Caption
                                 },
@@ -409,13 +422,13 @@ namespace BackgroundTasks
                                 },
                                 new AdaptiveText()
                                 {
-                                    Text = diffRepublican.Substring(1),
+                                    Text = rep1,
                                     HintAlign = AdaptiveTextAlign.Center,
                                     HintStyle = AdaptiveTextStyle.Caption
                                 },
                                 new AdaptiveText()
                                 {
-                                    Text = republican,
+                                    Text = rep2,
                                     HintAlign = AdaptiveTextAlign.Center,
                                     HintStyle = AdaptiveTextStyle.Caption
                                 },
