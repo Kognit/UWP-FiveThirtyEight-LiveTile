@@ -26,15 +26,28 @@ namespace FiveThirtyEight
         public MainPage()
         {
             this.InitializeComponent();
-
-
         }
-
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             this.RegisterBackgroundTask();
 
+            //ONCE SETTINGS UI IS LOADED, LOAD USER SETTINGS AND SET THE TOGGLESWITCHES
+            ApplicationDataContainer appSettings = ApplicationData.Current.LocalSettings;
+            if (appSettings.Values.ContainsKey("enableNotifications"))
+            {
+                settingNotifications.IsOn = (bool)appSettings.Values["enableNotifications"];
+            }
+            if (appSettings.Values.ContainsKey("enablePhoto"))
+            {
+                settingPhoto.IsOn = (bool)appSettings.Values["enablePhoto"];
+            }
+
+            //ADD EVENT HANDLERS FOR TOGGLESWITCHES
+            settingNotifications.Toggled += settingToggled;
+            settingPhoto.Toggled += settingToggled;
+
+            //DO STARTING PROCEDURE
             SetUp();
 
         }
@@ -77,7 +90,7 @@ namespace FiveThirtyEight
         private const string taskName = "BackgroundUpdater";
         private const string taskEntryPoint = "BackgroundTasks.BackgroundUpdater";
 
-        private void settingToggled(object sender, RoutedEventArgs e)
+        void settingToggled(object sender, RoutedEventArgs e)
         {
             ApplicationDataContainer appSettings = ApplicationData.Current.LocalSettings;
             appSettings.Values["enableNotifications"] = settingNotifications.IsOn;
