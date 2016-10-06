@@ -58,7 +58,7 @@ namespace BackgroundTasks
             ForecastData data = new ForecastData();
             await data.GetData(1);
 
-            LiveTile tile = new LiveTile(doPhoto);
+            LiveTileScreenshot tile = new LiveTileScreenshot();
             await tile.PinTile(data);
             
         }

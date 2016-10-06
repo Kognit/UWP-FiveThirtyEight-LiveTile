@@ -157,8 +157,8 @@ namespace BackgroundTasks
 
         private TileBinding GenerateTileBindingSmall()
         {
-            string text1 = (int)data.confidenceDemocrat + "% (D)";
-            string text2 = (int)data.confidenceRepublican + "% (R)";
+            string text1 = Math.Round(data.confidenceDemocrat, 0, MidpointRounding.AwayFromZero) + "% (D)";
+            string text2 = Math.Round(data.confidenceRepublican, 0, MidpointRounding.AwayFromZero) + "% (R)";
 
             TileBinding value = new TileBinding()
             {
@@ -196,7 +196,6 @@ namespace BackgroundTasks
             string text1 = "";
             string text2 = "";
             string image = "";
-            string back = "";
             switch (mode)
             {
                 case 0:
@@ -233,7 +232,7 @@ namespace BackgroundTasks
                 {
                     Text = text1,
                     HintAlign = AdaptiveTextAlign.Center,
-                    HintStyle = AdaptiveTextStyle.Base
+                    HintStyle = AdaptiveTextStyle.Caption
                 },
 
                 new AdaptiveText()
@@ -259,12 +258,12 @@ namespace BackgroundTasks
             switch (mode)
             {
                 case 0:
-                    text1 = (int)data.confidenceDemocrat + "%" + diffDemocrat;
+                    text1 = Math.Round(data.confidenceDemocrat, 0, MidpointRounding.AwayFromZero) + "%";
                     text2 = democrat;
                     back = "Assets/medium-clinton.jpg";
                     break;
                 case 1:
-                    text1 = (int)data.confidenceRepublican + "%" + diffRepublican;
+                    text1 = Math.Round(data.confidenceRepublican, 0, MidpointRounding.AwayFromZero) + "%";
                     text2 = republican;
                     back = "Assets/medium-trump.jpg";
                     break;
@@ -389,6 +388,19 @@ namespace BackgroundTasks
 
         private TileBinding GenerateTileBindingLarge()
         {
+            string dem1 = democrat;
+            string dem2 = "";
+            string rep1 = republican;
+            string rep2 = "";
+
+            if (diffDemocrat != "")
+            {
+                dem1 = diffDemocrat.Substring(1);
+                dem2 = democrat;
+                rep1 = diffRepublican.Substring(1);
+                rep2 = republican;
+            }
+
             return new TileBinding()
             {
                 Content = new TileBindingContentAdaptive()
@@ -414,23 +426,21 @@ namespace BackgroundTasks
                                 },
                                 new AdaptiveText()
                                 {
-                                    Text = data.confidenceDemocrat + "%" + diffDemocrat,
+                                    Text = data.confidenceDemocrat + "%",
                                     HintAlign = AdaptiveTextAlign.Center,
                                     HintStyle = AdaptiveTextStyle.TitleNumeral,
                                 },
-
                                 new AdaptiveText()
                                 {
-                                    Text = democrat,
+                                    Text = dem1,
                                     HintAlign = AdaptiveTextAlign.Center,
                                     HintStyle = AdaptiveTextStyle.Caption
                                 },
-
                                 new AdaptiveText()
                                 {
-                                    Text = "",
+                                    Text = dem2,
                                     HintAlign = AdaptiveTextAlign.Center,
-                                    HintStyle = AdaptiveTextStyle.CaptionSubtle
+                                    HintStyle = AdaptiveTextStyle.Caption
                                 },
                                 new AdaptiveText()
                                 {
@@ -475,23 +485,21 @@ namespace BackgroundTasks
                                 },
                                 new AdaptiveText()
                                 {
-                                    Text = data.confidenceRepublican + "%" + diffRepublican,
+                                    Text = data.confidenceRepublican + "%",
                                     HintAlign = AdaptiveTextAlign.Center,
                                     HintStyle = AdaptiveTextStyle.TitleNumeral
                                 },
-
                                 new AdaptiveText()
                                 {
-                                    Text = republican,
+                                    Text = rep1,
                                     HintAlign = AdaptiveTextAlign.Center,
                                     HintStyle = AdaptiveTextStyle.Caption
                                 },
-
                                 new AdaptiveText()
                                 {
-                                    Text = "",
+                                    Text = rep2,
                                     HintAlign = AdaptiveTextAlign.Center,
-                                    HintStyle = AdaptiveTextStyle.CaptionSubtle
+                                    HintStyle = AdaptiveTextStyle.Caption
                                 },
                                 new AdaptiveText()
                                 {

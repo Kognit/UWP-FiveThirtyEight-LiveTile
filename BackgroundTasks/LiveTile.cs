@@ -133,7 +133,6 @@ namespace BackgroundTasks
             string text1 = "";
             string text2 = "";
             string image = "";
-            string back = "";
             switch (mode)
             {
                 case 0:
@@ -170,7 +169,7 @@ namespace BackgroundTasks
                 {
                     Text = text1,
                     HintAlign = AdaptiveTextAlign.Center,
-                    HintStyle = AdaptiveTextStyle.Base
+                    HintStyle = AdaptiveTextStyle.Caption
                 },
 
                 new AdaptiveText()
