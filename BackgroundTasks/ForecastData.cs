@@ -33,6 +33,8 @@ namespace BackgroundTasks
         internal double popularVoteDemocrat;
         internal double popularVoteRepublican;
 
+        internal bool hasChanged = false;
+
         public ForecastData()
         {
             appSettings = ApplicationData.Current.LocalSettings;
@@ -44,7 +46,6 @@ namespace BackgroundTasks
 
         internal async Task GetData(int forecastType)
         {
-
             //GET CORRECT URL FOR FORECASTTYPE (POLLS PLUS, POLLS ONLY, NOW-CAST)
             string url = "http://projects.fivethirtyeight.com/2016-election-forecast/";
             switch (forecastType)
@@ -125,6 +126,7 @@ namespace BackgroundTasks
             //COMPARE TO LAST FORECAST
             if (confidenceDemocrat - lastValues.X > 0.01 || confidenceDemocrat - lastValues.X < -0.01)
             {
+                hasChanged = true;
                 //SET DIFFERENCE AND SAVE CURRENT FORECAST AS LASTFORECAST
                 confidenceDifference = confidenceDemocrat - lastValues.X;
                 appSettings.Values["lastforecast"] = new Point(confidenceDemocrat, confidenceRepublican);

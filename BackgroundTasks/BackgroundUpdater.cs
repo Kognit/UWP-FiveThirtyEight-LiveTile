@@ -42,7 +42,7 @@ namespace BackgroundTasks
             
             if (appSettings.Values.ContainsKey("enableNotifications"))
             {
-                if ((bool)appSettings.Values["enableNotifications"])
+                if ((bool)appSettings.Values["enableNotifications"] && data.hasChanged)
                 {
                     Notification toast = new Notification(data);
                 }

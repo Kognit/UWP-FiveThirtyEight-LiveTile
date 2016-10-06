@@ -4,7 +4,7 @@
   <mp:PhoneIdentity PhoneProductId="6409e587-2c2b-4490-a2ce-81762d9dd332" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>FiveThirtyEight</DisplayName>
-    <PublisherDisplayName>Markus</PublisherDisplayName>
+    <PublisherDisplayName>Kogni</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="FiveThirtyEight.App">
-      <uap:VisualElements DisplayName="FiveThirtyEight" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="FiveThirtyEight" BackgroundColor="transparent">
+      <uap:VisualElements DisplayName="FiveThirtyEight" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="FiveThirtyEight LiveTile" BackgroundColor="transparent">
         <uap:LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\BadgeLogo.png" />
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\Square310x310Logo.png">
           <uap:ShowNameOnTiles>
