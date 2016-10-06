@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Windows.ApplicationModel.Background;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -41,7 +42,7 @@ namespace FiveThirtyEight
         async void SetUp()
         {
             //SET LIVETILE ON STARTUP
-            BackgroundUpdater.RunFromMainPage();
+            BackgroundUpdater.RunFromMainPage(settingPhoto.IsOn);
 
             await Task.Delay(2000);
 
@@ -75,6 +76,15 @@ namespace FiveThirtyEight
 
         private const string taskName = "BackgroundUpdater";
         private const string taskEntryPoint = "BackgroundTasks.BackgroundUpdater";
+
+        private void settingToggled(object sender, RoutedEventArgs e)
+        {
+            ApplicationDataContainer appSettings = ApplicationData.Current.LocalSettings;
+            appSettings.Values["enableNotifications"] = settingNotifications.IsOn;
+            appSettings.Values["enablePhoto"] = settingPhoto.IsOn;
+
+            BackgroundUpdater.RunFromMainPage(settingPhoto.IsOn);
+        }
     }
 
 }

@@ -15,20 +15,19 @@ namespace BackgroundTasks
 {
     public sealed class LiveTile
     {
-
-        static string logo = "Assets/clinton-alligator.png";
+        
         ForecastData data;
         string democrat = "Hillary Clinton";
         string republican = "Donald Trump";
-        string democratShort = "CLI";
-        string republicanShort = "TRU";
 
         string diffDemocrat = "";
         string diffRepublican = "";
 
-        public LiveTile()
-        {
+        bool doPhoto;
 
+        public LiveTile(bool Photo)
+        {
+            doPhoto = Photo;
 
         }
 
@@ -69,7 +68,15 @@ namespace BackgroundTasks
             TileVisual visual = new TileVisual();
 
             //MEDIUM TILE WILL SWITCH BETWEEN CANDIDATES USING A NOTIFICATION QUEUE
-            visual.TileMedium = GenerateTileBindingMediumImage(mode);
+            //USER CAN CHOOSE BETWEEN CARTOON HEADS AND PHOTO BACKGROUNDS
+            if (doPhoto)
+            {
+                visual.TileMedium = GenerateTileBindingMediumImage(mode);
+            }
+            else
+            {
+                visual.TileMedium = GenerateTileBindingMedium(mode);
+            }
             if (mode == 1)
             {
                 //WIDE AND LARGE TILES DO NOT NEED A NOTIFICATION QUEUE TO DISPLAY BOTH CANDIDATES

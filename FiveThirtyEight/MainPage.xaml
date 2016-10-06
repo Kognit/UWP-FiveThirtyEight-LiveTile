@@ -22,8 +22,8 @@
             
             <MenuFlyoutSeparator></MenuFlyoutSeparator>
 
-            <ToggleSwitch OffContent="Send Notifications" OnContent="Send Notifications"></ToggleSwitch>
-            <ToggleSwitch OffContent="Enable Photo-Backgrounds" OnContent="Enable Photo-Backgrounds"></ToggleSwitch>
+            <ToggleSwitch x:Name="settingNotifications" OffContent="Send Notifications" OnContent="Send Notifications" Toggled="settingToggled"></ToggleSwitch>
+            <ToggleSwitch x:Name="settingPhoto" OffContent="Enable Photo-Backgrounds" OnContent="Enable Photo-Backgrounds" Toggled="settingToggled"></ToggleSwitch>
             
             <MenuFlyoutSeparator></MenuFlyoutSeparator>
 
