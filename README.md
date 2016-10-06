@@ -1,7 +1,7 @@
 # UWP-FiveThirtyEight-LiveTile
 UWP App implementing Live-Tile functionality to display presidential race data from fivethirtyeight.com
 
-![FiveThirtyEight Tile](previewlarge.png)
+![FiveThirtyEight Tile](previewmulti.png)
 
 Starting this app once will register a Background-Process polling fivethirtyeight.com every 15 minutes to get the latest confidence scores of Nate Silvers model.
 
