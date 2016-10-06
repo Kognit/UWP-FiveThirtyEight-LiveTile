@@ -131,10 +131,5 @@ namespace BackgroundTasks
                 appSettings.Values["lastdifference"] = confidenceDifference;
             }
         }
-
-        private void Webview_NavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs args)
-        {
-            navigationcomplete = true;
-        }
     }
 }
