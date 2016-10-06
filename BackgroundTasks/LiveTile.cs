@@ -87,8 +87,8 @@ namespace BackgroundTasks
 
         private TileBinding GenerateTileBindingSmall()
         {
-            string text1 = (int)data.confidenceDemocrat + "% (D)";
-            string text2 = (int)data.confidenceRepublican + "% (R)";
+            string text1 = Math.Round(data.confidenceDemocrat, 0, MidpointRounding.AwayFromZero) + "% (D)";
+            string text2 = Math.Round(data.confidenceRepublican, 0, MidpointRounding.AwayFromZero) + "% (R)";
 
             TileBinding value = new TileBinding()
             {
@@ -189,12 +189,12 @@ namespace BackgroundTasks
             switch (mode)
             {
                 case 0:
-                    text1 = (int)data.confidenceDemocrat + "%";
+                    text1 = Math.Round(data.confidenceDemocrat, 0, MidpointRounding.AwayFromZero) + "%";
                     text2 = democrat;
                     back = "Assets/medium-clinton.jpg";
                     break;
                 case 1:
-                    text1 = (int)data.confidenceRepublican + "%";
+                    text1 = Math.Round(data.confidenceRepublican, 0, MidpointRounding.AwayFromZero) + "%";
                     text2 = republican;
                     back = "Assets/medium-trump.jpg";
                     break;
