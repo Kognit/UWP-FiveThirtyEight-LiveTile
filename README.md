@@ -11,7 +11,7 @@ If you don't want to build the project from source, i have included a prebuilt p
 - [make sure you have sideloading enabled on your system](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#enable-your-windows-10-devices)
 - download the repository (green button top right)
 - unzip
-- open the "FiveThirtyEight_1.0.0.0" folder
+- open the "FiveThirtyEight_1.0.1.0" folder
 - right-click "Add-AppDevPackage.ps1"
 - select "Run with Powershell"
 
