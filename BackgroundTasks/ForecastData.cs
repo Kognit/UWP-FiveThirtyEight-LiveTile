@@ -129,9 +129,9 @@ namespace BackgroundTasks
                 hasChanged = true;
                 //SET DIFFERENCE AND SAVE CURRENT FORECAST AS LASTFORECAST
                 confidenceDifference = confidenceDemocrat - lastValues.X;
-                appSettings.Values["lastforecast"] = new Point(confidenceDemocrat, confidenceRepublican);
                 appSettings.Values["lastdifference"] = confidenceDifference;
             }
+            appSettings.Values["lastforecast"] = new Point(confidenceDemocrat, confidenceRepublican);
         }
     }
 }
